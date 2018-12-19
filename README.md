@@ -1,2 +1,3 @@
 # python
-a noob in python
+--> Just a noob
+--> Hoping to be a good coder
