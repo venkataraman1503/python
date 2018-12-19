@@ -1,0 +1,10 @@
+x=input("enter the first number")
+y=input("enter the second number")
+z=input("enter the third number")
+if x>y and x>z:
+  print(x," is the greatest of all")
+elif y>z:
+  print(y," is the greatest of all")
+else:
+  print(z," is the greatest of all")
+  
