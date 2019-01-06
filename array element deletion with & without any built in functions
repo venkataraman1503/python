@@ -1,0 +1,26 @@
+#without built in functions
+from array import *
+x=array('i',[])
+n=int(input("enter the number of elements to be inserted\n"))
+for i in range(1,n+1):
+    d = int(input("enter the element"))
+    x.append(d)
+
+f=int(input("enter the index"))
+for e in x:
+    if e==x[f]:
+       pass
+    else:
+        print("\n",e)
+
+#with built in functions
+from array import *
+x=array('i',[])
+n=int(input("enter the number of elements to be inserted\n"))
+for i in range(1,n-1):
+  d=int(input("enter the element")
+  x.append(d)
+  
+f=int(input("enter the index"))
+x.pop(f)
+print(x)
