@@ -1,0 +1,7 @@
+from array import *
+myinput = array('i',[4,2,36,6,3])
+for i in range(4,-1,-1):
+    for j in range(3,-1,-1):
+        if i>j and myinput[i]>myinput[j]:
+            myinput[i],myinput[j]=myinput[j],myinput[i]
+print(myinput)
