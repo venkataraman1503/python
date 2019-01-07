@@ -1,0 +1,28 @@
+#without using any max functions
+from array import *
+a = array('i',[70,91,63,19,25,129,100,175])
+n=len(a)
+count=0
+for i in a:
+    for j in a:
+        if i<j:
+            continue
+        elif i==j:
+            continue
+        else:
+            count=count+1
+            continue
+    if count==n-2:
+        print(i," is the  second greatest element in the array 'a'")
+        break
+    else:
+        count=0
+-----------------------------------------------------------------------------------
+#using max function
+zes = max(arr)
+i=0
+while(i<n):
+    if zes ==max(arr):
+        arr.remove(max(arr))
+    i+=1
+print(max(arr))
