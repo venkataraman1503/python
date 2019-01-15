@@ -1,0 +1,15 @@
+from array import *
+a=array('i',[])
+s=int(input("enter the number of elements to be inserted in the array 's' "))
+for i in range(s):
+    x=int(input("enter the value one by one "))
+    a.append(x)
+
+
+for j in range(s):
+    for k in range(s-j-1,s-j-2,-1):
+        if j!=k and j<k:
+            a[j],a[k]=a[k],a[j]
+        else:
+            print(a)
+            exit()
