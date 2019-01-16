@@ -1,0 +1,11 @@
+from array import *
+a=array('i',[1,2,3,4,5,0]) #check the logic given in the description
+d=7
+i=4
+n=len(a)
+for j in range(n-1,-1,-1):
+    a[j]=a[j-1]
+    if i==j:
+        a[i]=d
+        break
+print(a)
