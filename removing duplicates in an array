@@ -1,0 +1,10 @@
+from array import *
+a=array('i',[23,12,12,24,12])
+for i in range(0,5):
+    for j in range(4,i,-1):
+        if a[i]==a[j]:
+            a.remove(a[j])
+            print(a)
+            continue
+        else:
+            continue
