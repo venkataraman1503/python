@@ -8,7 +8,7 @@ for i in range(s):
 
 for j in range(s):
     for k in range(s-j-1,s-j-2,-1):
-        if j!=k and j<k:
+        if j<=k:
             a[j],a[k]=a[k],a[j]
         else:
             print(a)
