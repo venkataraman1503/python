@@ -1,0 +1,21 @@
+a=input("enter the credit card number\n")
+c=0
+if len(a)==16:
+    if a[0]=='4' or a[0]=='5' or a[0]=='6':
+        for i in range(len(a)):
+            for j in range(len(a)):
+                if i!=j and a[i]==a[j]:
+                    c+=1
+            if c>2:
+                print("invalid, because ",a[i],"is repeated more than thrice")
+                break
+            else:
+                c=0
+                continue
+        if c==0:
+            print("valid")
+
+    else:
+        print("invalid, because number doesnt begin with 4,5 or 6")
+else:
+    print("invalid, because the number is not 16 characters")
