@@ -1,0 +1,29 @@
+import numpy as np
+from array import *
+import re
+a = input("enter the string to convert\n")
+c =array('u',['*','+','/','-'])
+b = ""
+arr = np.zeros(10,str)
+arr1 = np.zeros(9,str)
+top =-1
+top1 =-1
+for i in range(len(a)):
+    if a[i].isalpha() == True:
+        b+=a[i]
+        if i==len(a)-1:
+            b+=arr[top]
+            top=top-1
+    elif a[i]=='(' or a[i]=='{':
+        top1 = top1 + 1
+        arr1[top1] = a[i]
+    elif a[i] in c:
+        top = top +1
+        arr[top] = a[i]
+    elif a[i] == ')' and arr1[top1] == '(':
+            b+=arr[top]
+            top1-=1
+            top -=1
+            b+=arr[top]
+            top-=1
+print(b)
