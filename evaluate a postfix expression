@@ -1,0 +1,23 @@
+from array import *
+a = [4,6,8,'*','+',10,2,'//','-']
+b = array('i',[])
+top = -1
+for i in range(len(a)):
+    if a[i]!='-' and a[i]!='+' and a[i]!='*' and a[i]!='//':
+        if a[i]>0:
+            b.append(a[i])
+            top+=1
+    else:
+        op2=b.pop(top)
+        top=top-1
+        op1 = b.pop(top)
+        if a[i]=='+':
+         b.insert(top,op1+op2)
+        elif a[i]=='-':
+            b.insert(top,op1-op2)
+        elif a[i]=='*':
+            b.insert(top,op1*op2)
+        else:
+            b.insert(top,op1//op2)
+print("The evaluation of the postfix expression is found to be.. ")
+print(b[0])
