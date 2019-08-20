@@ -1,0 +1,20 @@
+a = ["GEEKS", "FOR", "QUIZ", "GO"]
+b = ['G','F','Z','G','E','O','Q','R','E']
+c = 0
+d = 0
+for i in a:
+    for j in range(len(i)):
+        for k in range(len(b)):
+            if i[j] == b[k]:
+                d+=1
+        if d>1:
+            d = d//d
+            c += d
+            d = 0
+        else:
+            c+=d
+            d =0
+
+    if c == len(i):
+        print(i)
+    c=0
