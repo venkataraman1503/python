@@ -1,0 +1,14 @@
+a ="venkataraman"
+b = "raman"
+n = len(a)
+c =""
+for j in range(len(a)):
+    if b[0] == a[j]:
+        c = a[j:n]
+        if b==c:
+            print(j)
+            exit()
+        else:
+            c=""
+print("-1")
+
