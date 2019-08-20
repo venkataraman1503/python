@@ -1,0 +1,11 @@
+a = ["GEEKS", "FORR", "QUIZ", "GO"]
+b = ['G','O','Z','G','U','R','Q','E','I']
+for i in a:
+    x=0
+    for j in i:
+        if i.count(j) <= b.count(j):
+            pass
+        else:
+            x = -1
+    if x == 0:
+        print(i)
