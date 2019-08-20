@@ -1,0 +1,3 @@
+a ="leaeksforkeeks"
+b = "xeeks"
+print(a.find(b))
