@@ -1,0 +1,17 @@
+a = [1,8,7,7,9]     //starting time
+b = [5,10,15,10,12]   // finishing time
+x =0
+y = 0
+z =0
+c =0
+for i in range(len(a)):
+    if a[i]<b[i]:
+        if ((a[i]>x and a[i]>y) and (b[i]>x and b[i]>y)) or ((a[i]<x and a[i]<y) and (b[i]<=x and b[i]<y)):
+          if a[i]>z:
+            x =a[i]
+            y =b[i]
+            c += 1
+            if i>1:
+                z =b[i-1]
+
+print(c)
