@@ -1,0 +1,129 @@
+#include <stdio.h>
+#include <stdlib.h>
+int a[50];
+int b[50];
+int i=-1;
+int j=-1;
+struct node
+{
+    int data;
+    struct node* left;
+    struct node* right;
+};
+struct node* root = NULL;
+struct node* point;
+struct node* root1 = NULL;
+struct node* create(int e)
+{
+    struct node* ptr = (struct node*)malloc(sizeof(struct node));
+    ptr->data = e;
+    ptr->left = ptr->right = NULL;
+    return ptr;
+}
+struct node* insert(struct node* rot,int e)
+{
+    if(root==NULL)
+    {
+        root = create(e);
+    }
+    else if(rot==NULL)
+    {
+        point = create(e);
+        return point;
+        
+        
+    }
+    else if(e>rot->data)
+    {
+        rot->right = insert(rot->right,e);
+    }
+    else if(e<rot->data)
+    {
+        rot->left = insert(rot->left,e);
+    }
+}
+int preorder(struct node* rot)
+{
+    if(rot==NULL)
+    {
+        return;
+    }
+    else
+    {
+        preorder(rot->left);
+        preorder(rot->right);
+        i=i+1;
+        a[i]=rot->data;
+    }
+}
+
+struct node* insert1(struct node* rot,int e)
+{
+    if(root1==NULL)
+    {
+        root1 = create(e);
+    }
+    else if(rot==NULL)
+    {
+        point = create(e);
+        return point;
+        
+        
+    }
+    else if(e>rot->data)
+    {
+        rot->right = insert1(rot->right,e);
+    }
+    else if(e<rot->data)
+    {
+        rot->left = insert1(rot->left,e);
+    }
+}
+int preorder1(struct node* rot)
+{
+    if(rot==NULL)
+    {
+        return;
+    }
+    else
+    {
+        preorder1(rot->left);
+        preorder1(rot->right);
+        j=j+1;
+        b[j]=rot->data;
+    }
+}
+void main()
+{
+    insert(root,10);
+    insert(root,7);
+    insert(root,12);
+    insert(root,3);
+    insert(root,8);
+    insert(root,11);
+    insert(root,15);
+    insert(root,2);
+    insert(root,5);
+    insert(root,9);
+    
+    preorder(root);
+    
+    insert1(root1,7);
+    insert1(root1,10);
+    insert1(root1,12);
+    insert1(root1,3);
+    insert1(root1,8);
+    insert1(root1,11);
+    insert1(root1,15);
+    insert1(root1,2);
+    insert1(root1,5);
+    insert1(root1,9);
+    preorder1(root1);
+    int count=0;
+    for(int k=0;k<10;k++)
+    {
+        if(a[k]==b[k]) count=count+1;
+    }
+    if(count==10) printf("identical");
+    else printf("not identical");
+}
