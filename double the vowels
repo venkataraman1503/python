@@ -1,0 +1,10 @@
+a = 'aeiou'
+b = "venkat"
+for i in b:
+    for j in range(len(a)):
+        if i==a[j]:
+            print(a[j]*2,end="")
+            a.replace(a[j],'0')
+            break
+    else:
+        print(i,end="")
