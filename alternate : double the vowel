@@ -1,0 +1,8 @@
+a = 'aeiou'
+b = "venkat"
+for i in b:
+    if i in a:
+        print(i,end="")
+        print(i,end="")
+    else:
+        print(i,end="")
