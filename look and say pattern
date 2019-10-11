@@ -1,0 +1,31 @@
+m = int(input())  //row number to print
+ele = "1"
+jel=""
+count = 1
+for k in range(20):
+    if m==1:
+        print(int(ele))
+        break
+    else:
+        if len(ele) == 1:
+            ele = str(ele.count("1")) + ele
+
+        elif len(ele) > 1:
+            for j in range(0, len(ele)):
+                if j != len(ele) - 1:
+                    if ele[j] == ele[j + 1]:
+                        count += 1
+                        if j+1 == len(ele)-1:
+                            jel = jel+str(count) + ele[j]
+                            count = 1
+                    else:
+                        jel = jel+str(count)+ele[j]
+                        count=1
+
+                elif ele[j-1] != ele[j]:
+                    jel = jel+"1" + ele[j]
+            ele = jel
+            jel=""
+        if m==k+2:
+            print(ele)
+            break
