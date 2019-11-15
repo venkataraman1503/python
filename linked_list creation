@@ -1,0 +1,72 @@
+class node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+class linked:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    def prr(self):
+        refer = self.head
+        while refer:
+            print(refer.data,refer)
+            refer = refer.next
+        print(self.head,self.tail)
+    def create(self,data):
+        newnode  = node(data)
+        if self.head == None:
+            self.head = newnode
+            self.tail = newnode
+        else:
+            newnode.next = self.head
+            self.head = newnode
+    def find(self,ele):
+        x = self.head
+        while x:
+            if x.data == ele:
+                print("element found")
+                break
+            else:
+                x = x.next
+        else:
+            print("element not found")
+
+    def remove(self,d):
+        pt1= self.head
+        pt2 = pt1
+        while pt1:
+            if pt1 is self.head and pt1.data is d:
+                self.head = pt1.next
+                return
+            else:
+                if pt1.data==d:
+                    pt2.next = pt1.next
+                    if pt1==self.tail:
+                        self.tail = pt2
+                    return
+
+            pt2 = pt1
+            pt1 = pt1.next
+    def insert(self,ele,position):
+        newnode = node(ele)
+        x = self.head
+        y = self.head
+        if position==1:
+            newnode.next = self.head
+            self.head = newnode
+            return
+        else:
+            i=1
+            while True:
+                if i==position:
+                    y.next = newnode
+                    newnode.next =  x
+                    if newnode.next is None:
+                        self.tail = newnode
+                    return
+
+                else:
+                    y = x
+                    x = x.next
+                    i+=1
+
