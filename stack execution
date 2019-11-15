@@ -1,0 +1,49 @@
+from stack import stack
+
+#CHECKING WHETHER A PARANTHESIS IS BALANCED OR NOT
+expression = input("enter the paranthesis expression to check if it is balanced or not\n")
+
+s1 = stack(1,len(expression))
+
+def check_balancing():
+    for i in expression:
+        if i in "{[(":
+            s1.push(i)
+        elif len(s1.lst)!=0:
+            a = s1.peek()
+            if a == "(" and i==")":
+                s1.pop()
+            elif a=="{" and i=="}":
+                s1.pop()
+            elif a=="[" and i=="]":
+                s1.pop()
+        else:
+            s1.push("$")
+    output_balans()
+
+def output_balans():
+    if s1.is_empty():
+        print("the paranthesis is balanced\n")
+    else:
+        print("the paranthesis is not balanced\n")
+check_balancing()
+print("---------------------end of part 1---------------------------------\n")
+
+#DECIMAL TO BINARY CONVERTER
+s2  = stack(2,2220)
+decimal = int(input("enter the decimal value\n"))
+length = 0
+def divi():
+    val = decimal
+    while val not in [1,0]:
+        s2.push(val%2)
+        val = val//2
+        globals()['length']+=1
+    s2.push(val)
+    globals()['length']+=1
+    printing()
+
+def printing():
+    for i in range(globals()['length']):
+        print(s2.pop(),end="")
+divi()
