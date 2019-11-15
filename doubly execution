@@ -1,0 +1,13 @@
+from doubly import *
+
+dl = dlist()
+dl.insert(1)
+dl.insert(2)
+dl.insert(3)
+dl.insert(4)
+
+
+dl.remove(5)
+pos = int(input("enter the position where you want to insert the element \n"))
+dl.addi(6,pos)
+dl.prr()
