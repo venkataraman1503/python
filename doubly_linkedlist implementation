@@ -1,0 +1,73 @@
+class node:
+    def __init__(self,data):
+        self.prev = None
+        self.next = None
+        self.data = data
+
+class dlist:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insert(self,data):
+        newnode = node(data)
+        if self.head is None:
+            self.head  = newnode
+        else:
+            x = self.head
+            while x.next:
+                x = x.next
+            newnode.next = x.next
+            x.next = newnode
+            newnode.prev =x
+            self.tail = x.next
+    def prr(self):
+        ref = self.head
+        while ref:
+            print(ref.data,ref,ref.prev,ref.next)
+            ref = ref.next
+        print(self.head,self.tail)
+
+    def remove(self,data):
+        ref = self.head
+        while ref:
+            if ref.data==data and ref == self.head:
+                self.head = ref.next
+                return
+            elif ref.data == data and ref==self.tail:
+                self.tail = ref.prev
+                self.tail.next = ref.next
+                return
+            elif ref.data==data:
+                ref.prev.next = ref.next
+                ref.next.prev = ref.prev
+                return
+            ref = ref.next
+        else:
+            print("element to be removed not found in the list\n")
+            return
+    def addi(self,data,pos):
+        newnode = node(data)
+        ref = self.head
+        if pos is 1:
+            newnode.next = self.head
+            self.head.prev = newnode
+            self.head = newnode
+            return
+        else:
+            i=1
+            while ref:
+                if ref == self.tail and pos == 00:
+                    ref.next = newnode
+                    newnode.prev = ref
+                    self.tail = newnode
+                    return
+
+                elif pos==i:
+                    ref.prev.next = newnode
+                    newnode.prev = ref.prev
+                    ref.prev = newnode
+                    newnode.next = ref
+                    return
+                i+=1
+                ref = ref.next
