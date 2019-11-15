@@ -1,0 +1,15 @@
+from list import *
+
+newobject = linked()
+print("enetr the elements inside the list")
+n = int(input("enter the number of elements\n"))
+for i in range(n):
+    e = int(input())
+    newobject.create(e)
+n1= int(input("enter the element to be deleted\n"))
+newobject.remove(n1)
+newobject.prr()
+newele = int(input("enter the element to be inserted\n"))
+position  = int(input("enter the position where it needs to be inserted\n"))
+newobject.insert(newele,position)
+newobject.prr()
