@@ -1,0 +1,13 @@
+class queue:
+    def __init__(self):
+        self.q = []
+
+    def enque(self,data):
+        self.q.append(data)
+
+    def deque(self):
+        self.q.pop(0)
+    def prt(self):
+        for i in self.q:
+            print(i,end="")
+        print()
