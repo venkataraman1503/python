@@ -1,0 +1,21 @@
+from queue import queue
+
+qo = queue()
+
+qo.enque("V")
+qo.enque("E")
+qo.enque("N")
+qo.enque("K")
+qo.enque("A")
+qo.enque("T")
+qo.enque("A")
+qo.enque("R")
+qo.enque("A")
+qo.enque("M")
+qo.prt()
+qo.deque()
+qo.deque()
+qo.deque()
+qo.deque()
+qo.deque()
+qo.prt()
