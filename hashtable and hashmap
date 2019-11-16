@@ -1,0 +1,62 @@
+capacity = 10
+class node:
+    def __init__(self,key,value):
+        self.key = key
+        self.data = value
+        self.next = None
+
+class hashtable:
+    def __init__(self):
+        self.capacity = capacity
+        self.size = 0
+        self.head = None
+        self.buckets = [None]*self.capacity
+
+    def hashing(self,key):
+        hashval = hash(key)%self.capacity
+        return hashval
+
+    def insert(self,key,value):
+        self.size+=1
+        index = self.hashing(key)
+        nod = self.buckets[index]
+        if nod is None:
+            self.buckets[index] = node(key,value)
+            return
+        else:
+            ref = self.buckets[index]
+            while ref.next is not None:
+                ref = ref.next
+            ref.next = node(key,value)
+            return
+    def find(self,key):
+        index = self.hashing(key)
+        nod = self.buckets[index]
+        if node is None:
+            print("key does not exist\n")
+            return
+        else:
+            while nod is not None:
+                if nod.key == key:
+                    print(nod.data,index)
+                    return
+                else:
+                    nod = nod.next
+            else:
+                print("key does not exist\n")
+                return
+h = hashtable()
+h.insert("x","raman")
+h.insert("y","venkat")
+h.insert("z","vignesh")
+h.insert("a","farhan")
+h.insert("d","jonathan")
+h.insert("g","mark")
+
+h.find("x")
+h.find("y")
+h.find("z")
+h.find("a")
+h.find("d")
+h.find("g")
+print(hash("x")%15)
